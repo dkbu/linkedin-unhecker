@@ -1,0 +1,52 @@
+/**
+ * LinkedIn Unhecker - Content Styles
+ * Styles for filtered job listings
+ */
+
+/* Hidden job cards */
+.linkedin-unhecker-hidden {
+  display: none !important;
+}
+
+/* Highlighted job cards (alternative to hiding) */
+.linkedin-unhecker-highlight {
+  opacity: 0.4 !important;
+  position: relative;
+  background-color: rgba(255, 200, 200, 0.3) !important;
+}
+
+.linkedin-unhecker-highlight::before {
+  content: attr(data-filter-reason);
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: #d32f2f;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  z-index: 100;
+  pointer-events: none;
+}
+
+/* Hover effect to temporarily show hidden jobs */
+.linkedin-unhecker-highlight:hover {
+  opacity: 0.8 !important;
+}
+
+/* Counter badge for filtered jobs */
+.linkedin-unhecker-counter {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #0a66c2;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 9999;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinkedIn Unhecker</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <header class="popup-header">
+      <h1>LinkedIn Unhecker</h1>
+      <label class="toggle-switch">
+        <input type="checkbox" id="enableToggle" checked>
+        <span class="toggle-slider"></span>
+      </label>
+    </header>
+
+    <div class="stats-section">
+      <div class="stat-item">
+        <span class="stat-value" id="totalJobs">0</span>
+        <span class="stat-label">Total Jobs</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value" id="filteredJobs">0</span>
+        <span class="stat-label">Filtered</span>
+      </div>
+    </div>
+
+    <div class="quick-filters">
+      <h2>Quick Filters</h2>
+      
+      <div class="filter-group">
+        <label class="checkbox-label">
+          <input type="checkbox" id="hidePromoted">
+          <span>Hide Promoted Jobs</span>
+        </label>
+      </div>
+      
+      <div class="filter-group">
+        <label class="checkbox-label">
+          <input type="checkbox" id="hideEasyApply">
+          <span>Hide Easy Apply Jobs</span>
+        </label>
+      </div>
+      
+      <div class="filter-group">
+        <label class="checkbox-label">
+          <input type="checkbox" id="hideAlreadyApplied" checked>
+          <span>Hide Already Applied</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="filter-mode">
+      <h2>Filter Mode</h2>
+      <div class="radio-group">
+        <label class="radio-label">
+          <input type="radio" name="filterMode" value="hide" checked>
+          <span>Hide filtered jobs</span>
+        </label>
+        <label class="radio-label">
+          <input type="radio" name="filterMode" value="highlight">
+          <span>Highlight filtered jobs</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button id="openOptions" class="btn btn-secondary">
+        Advanced Filters
+      </button>
+      <button id="refreshFilter" class="btn btn-primary">
+        Refresh
+      </button>
+    </div>
+
+    <footer class="popup-footer">
+      <a href="https://github.com/dkbu/linkedin-unhecker" target="_blank">GitHub</a>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

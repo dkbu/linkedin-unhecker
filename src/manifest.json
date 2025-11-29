@@ -1,0 +1,47 @@
+{
+  "manifest_version": 2,
+  "name": "LinkedIn Unhecker - Job Filter",
+  "version": "1.0.0",
+  "description": "Filter LinkedIn job offers by keywords, companies, locations, and more",
+  "author": "linkedin-unhecker",
+  "homepage_url": "https://github.com/dkbu/linkedin-unhecker",
+  "icons": {
+    "48": "icons/icon-48.png",
+    "96": "icons/icon-96.png"
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "*://*.linkedin.com/*"
+  ],
+  "browser_action": {
+    "default_icon": {
+      "48": "icons/icon-48.png",
+      "96": "icons/icon-96.png"
+    },
+    "default_title": "LinkedIn Unhecker",
+    "default_popup": "popup/popup.html"
+  },
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.linkedin.com/jobs/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "linkedin-unhecker@github.com",
+      "strict_min_version": "57.0"
+    }
+  }
+}

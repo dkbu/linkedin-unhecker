@@ -1,0 +1,248 @@
+/**
+ * LinkedIn Unhecker - Options Page Styles
+ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+  background-color: #f9fafb;
+}
+
+.options-container {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* Header */
+.options-header {
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.options-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0a66c2;
+  margin-bottom: 4px;
+}
+
+.options-header p {
+  color: #666;
+  font-size: 15px;
+}
+
+/* Sections */
+.section {
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.section h2 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.section .description {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.section .examples {
+  font-size: 12px;
+  color: #888;
+  margin-top: 8px;
+  font-style: italic;
+}
+
+/* Tags Input */
+.tags-input-container {
+  border: 1px solid #d0d0d0;
+  border-radius: 8px;
+  padding: 8px;
+  background-color: #fafafa;
+  min-height: 44px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.tags-input-container:focus-within {
+  border-color: #0a66c2;
+  box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.1);
+}
+
+.tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  background-color: #0a66c2;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.tag-remove {
+  margin-left: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+  opacity: 0.8;
+}
+
+.tag-remove:hover {
+  opacity: 1;
+}
+
+.tags-input-container input {
+  flex: 1;
+  min-width: 150px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: transparent;
+  padding: 4px;
+}
+
+/* Checkbox Group */
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-right: 12px;
+  cursor: pointer;
+  accent-color: #0a66c2;
+}
+
+.checkbox-label span {
+  font-size: 14px;
+  color: #333;
+}
+
+/* Radio Group */
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.radio-label {
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.radio-label:hover {
+  border-color: #0a66c2;
+  background-color: #f0f7ff;
+}
+
+.radio-label input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  margin-right: 12px;
+  margin-top: 2px;
+  cursor: pointer;
+  accent-color: #0a66c2;
+}
+
+.radio-label span {
+  display: flex;
+  flex-direction: column;
+}
+
+.radio-label strong {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.radio-label small {
+  font-size: 12px;
+  color: #666;
+  margin-top: 2px;
+}
+
+/* Footer */
+.options-footer {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.save-status {
+  font-size: 13px;
+  color: #28a745;
+}
+
+.footer-links {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.footer-links a {
+  font-size: 13px;
+  color: #666;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #0a66c2;
+  text-decoration: underline;
+}
+
+.footer-links span {
+  color: #ccc;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .options-container {
+    padding: 16px;
+  }
+  
+  .options-header h1 {
+    font-size: 24px;
+  }
+}

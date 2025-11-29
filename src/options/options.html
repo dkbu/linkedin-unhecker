@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinkedIn Unhecker - Options</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="options-container">
+    <header class="options-header">
+      <h1>LinkedIn Unhecker</h1>
+      <p>Configure your job filters</p>
+    </header>
+
+    <main class="options-main">
+      <section class="section">
+        <h2>Filter by Keywords</h2>
+        <p class="description">Hide jobs with these keywords in the title</p>
+        <div class="tags-input-container">
+          <div class="tags-list" id="keywordsTags"></div>
+          <input type="text" id="keywordsInput" placeholder="Type a keyword and press Enter">
+        </div>
+        <div class="examples">
+          Examples: "Senior", "Manager", "Contract", "Remote"
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Filter by Companies</h2>
+        <p class="description">Hide jobs from these companies</p>
+        <div class="tags-input-container">
+          <div class="tags-list" id="companiesTags"></div>
+          <input type="text" id="companiesInput" placeholder="Type a company name and press Enter">
+        </div>
+        <div class="examples">
+          Examples: "Amazon", "Meta", "Staffing Agency"
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Filter by Locations</h2>
+        <p class="description">Hide jobs in these locations</p>
+        <div class="tags-input-container">
+          <div class="tags-list" id="locationsTags"></div>
+          <input type="text" id="locationsInput" placeholder="Type a location and press Enter">
+        </div>
+        <div class="examples">
+          Examples: "San Francisco", "New York", "Remote"
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Quick Filters</h2>
+        <div class="checkbox-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="hidePromoted">
+            <span>Hide Promoted Jobs</span>
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" id="hideEasyApply">
+            <span>Hide Easy Apply Jobs</span>
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" id="hideAlreadyApplied" checked>
+            <span>Hide Jobs You've Already Applied To</span>
+          </label>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Filter Mode</h2>
+        <p class="description">Choose how to handle filtered jobs</p>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="filterMode" value="hide" checked>
+            <span>
+              <strong>Hide</strong>
+              <small>Completely hide filtered jobs from view</small>
+            </span>
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="filterMode" value="highlight">
+            <span>
+              <strong>Highlight</strong>
+              <small>Dim filtered jobs and show the filter reason</small>
+            </span>
+          </label>
+        </div>
+      </section>
+    </main>
+
+    <footer class="options-footer">
+      <div class="save-status" id="saveStatus">Settings auto-saved</div>
+      <div class="footer-links">
+        <a href="https://github.com/dkbu/linkedin-unhecker" target="_blank">GitHub</a>
+        <span>•</span>
+        <a href="https://github.com/dkbu/linkedin-unhecker/issues" target="_blank">Report Issue</a>
+      </div>
+    </footer>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>
