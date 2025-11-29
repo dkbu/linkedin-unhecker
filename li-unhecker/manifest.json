@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+  "name": "li-unhecker",
+  "description": "Unhecks linkedin jobsearch",
+  "version": "1",
+  "icons": {
+    "64": "icons/frug-icn-64.png"
+  },
+  "background": {
+    "scripts": [
+      "background_script.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.linkedin.com/*"
+      ],
+      "js": [
+        "content_script.js"
+      ]
+    }
+  ]
+}
