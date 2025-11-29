@@ -2,6 +2,21 @@
  * LinkedIn Unhecker - Popup Script
  */
 
+/**
+ * Check if a URL is a valid LinkedIn URL
+ * @param {string} url - The URL to check
+ * @returns {boolean} - True if it's a valid LinkedIn URL
+ */
+function isLinkedInUrl(url) {
+  if (!url) return false;
+  try {
+    const parsedUrl = new URL(url);
+    return parsedUrl.hostname === 'linkedin.com' || parsedUrl.hostname.endsWith('.linkedin.com');
+  } catch (e) {
+    return false;
+  }
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
   // Get DOM elements
   const enableToggle = document.getElementById('enableToggle');
@@ -31,7 +46,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   async function updateStats() {
     try {
       const tabs = await browser.tabs.query({ active: true, currentWindow: true });
-      if (tabs[0] && tabs[0].url && tabs[0].url.includes('linkedin.com')) {
+      if (tabs[0] && isLinkedInUrl(tabs[0].url)) {
         const stats = await browser.tabs.sendMessage(tabs[0].id, { action: 'getStats' });
         totalJobsEl.textContent = stats.total;
         filteredJobsEl.textContent = stats.filtered;
@@ -78,7 +93,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   refreshFilterBtn.addEventListener('click', async () => {
     try {
       const tabs = await browser.tabs.query({ active: true, currentWindow: true });
-      if (tabs[0] && tabs[0].url && tabs[0].url.includes('linkedin.com')) {
+      if (tabs[0] && isLinkedInUrl(tabs[0].url)) {
         await browser.tabs.sendMessage(tabs[0].id, { action: 'settingsUpdated' });
         updateStats();
       }
