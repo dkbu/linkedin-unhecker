@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+  "name": "Unheck Linkedin",
+  "version": "1.0",
+
+  "description": "Make linkedin search results usable.",
+
+  "icons": {
+    "48": "icons/liuh-48.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.linkedin.com/*"],
+      "js": ["liuh.js"]
+    }
+  ]
+}
